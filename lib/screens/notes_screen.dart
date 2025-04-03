@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/utils/notes_list.dart';
+import 'package:note_app/components/note_item.dart';
+import 'package:note_app/components/search_icon.dart';
 import 'package:note_app/components/custome_app_bar.dart';
 
 class NotesScreen extends StatelessWidget {
@@ -9,19 +12,22 @@ class NotesScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          CustomeAppBar(title: 'Notes'),
+          const CustomeAppBar(title: 'Notes', actions: [SearchIcon()]),
           Expanded(
-            child: ListView.builder(
-              itemCount: 10, // Replace with your notes count
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text('Note $index'),
-                  subtitle: Text('This is the content of note $index'),
-                  onTap: () {
-                    // Handle note tap
-                  },
-                );
-              },
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: mockNotes.length, // Replace with your notes count
+                itemBuilder: (context, index) {
+                  return NoteItem(
+                    title: mockNotes[index]['title'],
+                    content: mockNotes[index]['content'],
+                    date: mockNotes[index]['date'],
+                    color: mockNotes[index]['color'],
+                  );
+                },
+              ),
             ),
           ),
         ],

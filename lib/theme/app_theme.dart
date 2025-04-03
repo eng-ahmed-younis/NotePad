@@ -9,6 +9,7 @@ class AppTheme {
       backgroundColor: Colors.blue,
       foregroundColor: Colors.white,
     ),
+    fontFamily: 'Lora',
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -19,5 +20,6 @@ class AppTheme {
       backgroundColor: Colors.blueGrey,
       foregroundColor: Colors.white,
     ),
+    fontFamily: 'Lora',
   );
 }
