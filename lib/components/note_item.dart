@@ -70,7 +70,7 @@ class NoteItem extends StatelessWidget {
                 /// Trailing delete icon
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.delete, color: Colors.white70),
+                  icon: const Icon(Icons.delete, color: Colors.black54),
                 ),
               ],
             ),
